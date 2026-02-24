@@ -26,7 +26,7 @@
       left: 0;
       width: 100%;
       background-color: #fff;
-      padding: 20px;
+      padding: 20px 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
       display: flex;
@@ -57,6 +57,7 @@
       justify-content: space-between;
       cursor: pointer;
       margin-right: 10px;
+      margin-top: 1vh;
     }
 
     .hamburger div {
@@ -67,8 +68,8 @@
 
     nav {
       position: fixed;
-      top: 100px;
-      left: -200px; /* początkowo schowane */
+      top: 10vh; /* menu zaczyna się poniżej nagłówka */
+      left: -220px; /* początkowo schowane */
       width: 180px;
       background-color: #fff;
       box-shadow: 2px 0 5px rgba(0,0,0,0.2);
@@ -91,7 +92,7 @@
 
     /* Sekcja o mnie */
     section.about {
-      padding: 180px 20px 50px; /* uwzględnia nagłówek */
+      padding: 15vh 20px 50px; /* odstęp od góry responsywny */
       text-align: center;
     }
 
@@ -182,6 +183,26 @@
       border-radius: 4px;
       font-style: italic;
     }
+
+    /* Responsywność */
+    @media (max-width: 600px) {
+      section.about {
+        padding-top: 20vh;
+      }
+
+      nav {
+        top: 12vh;
+        width: 150px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -241,7 +262,7 @@
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
     hamburger.addEventListener('click', () => {
-      menu.style.left = menu.style.left === '0px' ? '-200px' : '0px';
+      menu.style.left = menu.style.left === '0px' ? '-220px' : '0px';
     });
 
     // Przycisk „Zobacz listę”
