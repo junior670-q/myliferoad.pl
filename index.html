@@ -68,8 +68,8 @@
 
     nav {
       position: fixed;
-      top: 10vh; /* menu zaczyna się poniżej nagłówka */
-      left: -220px; /* początkowo schowane */
+      top: 10vh;
+      left: -220px;
       width: 180px;
       background-color: #fff;
       box-shadow: 2px 0 5px rgba(0,0,0,0.2);
@@ -92,7 +92,7 @@
 
     /* Sekcja o mnie */
     section.about {
-      padding: 15vh 20px 50px; /* odstęp od góry responsywny */
+      padding: 15vh 20px 50px;
       text-align: center;
     }
 
@@ -100,6 +100,7 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      margin-top: 30px;  /* obniżenie zdjęcia */
       margin-bottom: 20px;
       object-fit: cover;
     }
@@ -127,7 +128,7 @@
     /* Lista marzeń */
     section.list {
       display: none;
-      padding: 50px 20px;
+      padding: 50px 10px;  /* przesunięcie w lewo */
       max-width: 800px;
       margin: 0 auto;
     }
@@ -202,7 +203,12 @@
       header p {
         font-size: 0.8rem;
       }
+
+      section.list {
+        padding-top: 10vh;
+      }
     }
+
   </style>
 </head>
 <body>
