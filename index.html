@@ -1,294 +1,217 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista, która się wydarzy...</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista, która się wydarzy</title>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    /* Nagłówek */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      padding: 20px 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  color:#222;
+}
 
-    header h1 {
-      font-size: 1.8rem;
-      text-align: center;
-      flex: 1;
-    }
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  z-index:1000;
+}
 
-    header p {
-      font-size: 0.9rem;
-      color: #555;
-      text-align: center;
-      flex: 1;
-      transition: opacity 0.3s;
-    }
+header h1{
+  font-size:1.6rem;
+}
 
-    /* Hamburger menu */
-    .hamburger {
-      width: 30px;
-      height: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      margin-right: 10px;
-      margin-top: 1vh;
-    }
+/* ===== HAMBURGER ===== */
+.hamburger{
+  position:absolute;
+  left:20px;
+  cursor:pointer;
+  width:30px;
+  height:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 
-    .hamburger div {
-      height: 3px;
-      background-color: #222;
-      border-radius: 2px;
-    }
+.hamburger div{
+  height:3px;
+  background:#222;
+  border-radius:2px;
+}
 
-    nav {
-      position: fixed;
-      top: 10vh;
-      left: -220px;
-      width: 180px;
-      background-color: #fff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      padding: 20px;
-      transition: left 0.3s;
-      z-index: 999;
-    }
+/* ===== PANEL MENU ===== */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  z-index:998;
+}
 
-    nav a {
-      display: block;
-      margin-bottom: 15px;
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-    }
+.side-panel{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100%;
+  background:#fff;
+  box-shadow:2px 0 10px rgba(0,0,0,0.2);
+  padding:100px 20px 40px 20px;
+  transition:0.3s;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 
-    nav a:hover {
-      color: #0077cc;
-    }
+.side-panel a{
+  text-decoration:none;
+  color:#222;
+  font-weight:500;
+  margin-bottom:20px;
+  display:block;
+}
 
-    /* Sekcja o mnie */
-    section.about {
-      padding: 15vh 20px 50px;
-      text-align: center;
-    }
+.side-panel a:hover{
+  color:#0077cc;
+}
 
-    section.about img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-top: 30px;  /* obniżenie zdjęcia */
-      margin-bottom: 20px;
-      object-fit: cover;
-    }
+.panel-bottom{
+  border-top:1px solid #ddd;
+  padding-top:20px;
+  margin-top:20px;
+}
 
-    section.about p {
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
+/* ===== SEKCJA O MNIE ===== */
+section.about{
+  padding-top:180px;   /* DUŻO miejsca od góry */
+  padding-bottom:60px;
+  text-align:center;
+}
 
-    button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: none;
-      background-color: #0077cc;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+section.about img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-top:40px;  /* jeszcze niżej zdjęcie */
+  margin-bottom:20px;
+}
 
-    button:hover {
-      background-color: #005fa3;
-    }
+/* ===== LISTA ===== */
+section.list{
+  display:none;
+  padding-top:140px;  /* żeby nie zachodziło */
+  padding-left:20px;
+  padding-right:20px;
+  max-width:800px;
+  margin:auto;
+}
 
-    /* Lista marzeń */
-    section.list {
-      display: none;
-      padding: 50px 10px;  /* przesunięcie w lewo */
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.dream{
+  background:#fff;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
 
-    .dream {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+/* RESPONSYWNOŚĆ */
+@media(max-width:600px){
+  section.about{
+    padding-top:200px;
+  }
 
-    .dream .info {
-      max-width: 70%;
-    }
-
-    .dream h3 {
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-    }
-
-    .dream .meta {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .dream button {
-      margin-left: 10px;
-      background-color: #28a745;
-    }
-
-    .dream button:hover {
-      background-color: #1e7e34;
-    }
-
-    /* Cytaty */
-    section.quotes {
-      display: none;
-      padding: 50px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .quote {
-      background-color: #fff;
-      padding: 15px 20px;
-      margin-bottom: 10px;
-      border-left: 4px solid #0077cc;
-      border-radius: 4px;
-      font-style: italic;
-    }
-
-    /* Responsywność */
-    @media (max-width: 600px) {
-      section.about {
-        padding-top: 20vh;
-      }
-
-      nav {
-        top: 12vh;
-        width: 150px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      header p {
-        font-size: 0.8rem;
-      }
-
-      section.list {
-        padding-top: 10vh;
-      }
-    }
-
-  </style>
+  section.list{
+    padding-top:160px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Nagłówek -->
-  <header>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <h1>Lista, która się wydarzy…</h1>
-    <p id="subtitle">Marzenia się nie spełniają. Marzenia się spełnia</p>
-  </header>
+<header>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <h1>Lista, która się wydarzy</h1>
+</header>
 
-  <!-- Menu -->
-  <nav id="menu">
+<div class="overlay" id="overlay"></div>
+
+<div class="side-panel" id="panel">
+  <div>
     <a href="#about">O mnie</a>
     <a href="#dreamList">Lista marzeń</a>
     <a href="#quotes">Cytaty</a>
-  </nav>
+  </div>
 
-  <!-- Sekcja o mnie -->
-  <section class="about" id="about">
-    <img src="https://via.placeholder.com/150" alt="Twoje zdjęcie">
-    <p>Cześć! Nazywam się [Twoje imię], jestem [krótki opis]. Tutaj zapisuję moje marzenia i osiągnięcia.</p>
-    <button id="showListBtn">Zobacz listę</button>
-  </section>
+  <div class="panel-bottom">
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+    <a href="https://facebook.com/" target="_blank">Facebook</a>
+    <a href="#">Moja firma</a>
+  </div>
+</div>
 
-  <!-- Lista marzeń -->
-  <section class="list" id="dreamList">
-    <div class="dream">
-      <div class="info">
-        <h3>🔥 Zostać strażakiem PSP</h3>
-        <div class="meta">Osiągnięte: 2026-03-15</div>
-      </div>
-      <button>Galeria</button>
-    </div>
+<section class="about" id="about">
+  <img src="https://via.placeholder.com/160" alt="Twoje zdjęcie">
+  <p>Tu możesz wpisać swój opis. Kim jesteś. Co robisz. Co budujesz.</p>
+  <br>
+  <button onclick="toggleList()">Zobacz listę</button>
+</section>
 
-    <div class="dream">
-      <div class="info">
-        <h3>🏍️ Przejechać trasę marzeń motocyklem</h3>
-        <div class="meta">Nie osiągnięte</div>
-      </div>
-      <button>Galeria</button>
-    </div>
-  </section>
+<section class="list" id="dreamList">
+  <div class="dream">
+    🔥 Zostać strażakiem PSP
+  </div>
 
-  <!-- Cytaty -->
-  <section class="quotes" id="quotes">
-    <div class="quote">„Nie czekaj. Czas nigdy nie będzie idealny.”</div>
-    <div class="quote">„Sukces to suma małych wysiłków powtarzanych dzień po dniu.”</div>
-  </section>
+  <div class="dream">
+    🏍️ Trasa życia motocyklem
+  </div>
+</section>
 
-  <script>
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    hamburger.addEventListener('click', () => {
-      menu.style.left = menu.style.left === '0px' ? '-220px' : '0px';
-    });
+<script>
+const hamburger = document.getElementById("hamburger");
+const panel = document.getElementById("panel");
+const overlay = document.getElementById("overlay");
 
-    // Przycisk „Zobacz listę”
-    const btn = document.getElementById('showListBtn');
-    const list = document.getElementById('dreamList');
-    btn.addEventListener('click', () => {
-      list.style.display = list.style.display === 'block' ? 'none' : 'block';
-      list.scrollIntoView({behavior: "smooth"});
-    });
+hamburger.addEventListener("click", ()=>{
+  panel.style.left="0";
+  overlay.style.display="block";
+});
 
-    // Cytat znika przy scrollu
-    const subtitle = document.getElementById('subtitle');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 50) {
-        subtitle.style.opacity = 0;
-      } else {
-        subtitle.style.opacity = 1;
-      }
-    });
-  </script>
+overlay.addEventListener("click", ()=>{
+  panel.style.left="-260px";
+  overlay.style.display="none";
+});
+
+function toggleList(){
+  const list=document.getElementById("dreamList");
+  list.style.display=list.style.display==="block"?"none":"block";
+}
+</script>
 
 </body>
 </html>
