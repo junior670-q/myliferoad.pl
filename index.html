@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lista, która się wydarzy</title>
 
+<!-- Czcionka EB Garamond z Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{
   margin:0;
@@ -33,9 +38,11 @@ header{
   z-index:1000;
 }
 
+/* EB Garamond dla nagłówka */
 header h1{
-  font-size:1.6rem;
-  font-weight:600;
+  font-family: 'EB Garamond', serif;
+  font-size:1.9rem;
+  font-weight:700;
 }
 
 /* ===== HAMBURGER ===== */
@@ -110,22 +117,23 @@ section.about{
 }
 
 section.about img{
-  width:220px;
-  height:220px;
+  width:210px;
+  height:210px;
   border-radius:50%;
   object-fit:cover;
   object-position:center;
-  margin-top:70px;
+  margin-top:20px;
   margin-bottom:30px;
   box-shadow:0 15px 40px rgba(0,0,0,0.35);
   border:4px solid #111;
 }
 
 section.about p{
-  max-width:600px;
+  max-width:620px;
   margin:auto;
   font-size:1rem;
   line-height:1.6;
+  padding:0 10px;
 }
 
 /* ===== LISTA ===== */
@@ -147,6 +155,25 @@ section.list{
   font-size:1.05rem;
 }
 
+/* ===== CYTATY ===== */
+section.quotes{
+  display:none;
+  padding-top:160px;
+  padding-left:20px;
+  padding-right:20px;
+  max-width:800px;
+  margin:auto;
+}
+
+.quote{
+  background:#fff;
+  padding:15px 20px;
+  margin-bottom:10px;
+  border-left:4px solid #0077cc;
+  border-radius:4px;
+  font-style:italic;
+}
+
 /* RESPONSYWNOŚĆ */
 @media(max-width:600px){
   section.about{
@@ -154,12 +181,17 @@ section.list{
   }
 
   section.about img{
-    width:190px;
-    height:190px;
+    width:180px;
+    height:180px;
   }
 
-  section.list{
+  section.list,
+  section.quotes{
     padding-top:180px;
+  }
+
+  header h1{
+    font-size:1.6rem;
   }
 }
 </style>
@@ -195,7 +227,7 @@ section.list{
 <section class="about" id="about">
   <img src="IMG_8660.jpeg" alt="Moje zdjęcie">
   <p>
-    Tu możesz wpisać swój opis. Kim jesteś. Co budujesz. 
+    Tu możesz wpisać swój opis — kim jesteś, co robisz, co budujesz. 
     To jest Twoje miejsce w internecie.
   </p>
   <br>
@@ -205,6 +237,11 @@ section.list{
 <section class="list" id="dreamList">
   <div class="dream">1</div>
   <div class="dream">2</div>
+</section>
+
+<section class="quotes" id="quotes">
+  <div class="quote">Cytat 1</div>
+  <div class="quote">Cytat 2</div>
 </section>
 
 <script>
@@ -224,7 +261,9 @@ overlay.addEventListener("click", ()=>{
 
 function toggleList(){
   const list=document.getElementById("dreamList");
+  const quotes=document.getElementById("quotes");
   list.style.display=list.style.display==="block"?"none":"block";
+  quotes.style.display="none";
 }
 </script>
 
