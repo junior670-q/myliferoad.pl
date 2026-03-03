@@ -45,7 +45,6 @@ header h1{
   letter-spacing:1px;
 }
 
-/* ===== HAMBURGER ===== */
 .hamburger{
   position:absolute;
   left:20px;
@@ -124,7 +123,6 @@ section.about img{
   height:210px;
   border-radius:50%;
   object-fit:cover;
-  object-position:center;
   margin-bottom:30px;
   box-shadow:0 15px 40px rgba(0,0,0,0.25);
   border:5px solid #6F4E37;
@@ -137,6 +135,25 @@ section.about p{
   line-height:1.8;
   color:#4A3426;
   padding:0 15px;
+}
+
+/* ===== PRZYCISK ===== */
+.cta-button{
+  margin-top:40px;
+  display:inline-block;
+  padding:14px 28px;
+  background:#6F4E37;
+  color:#F3EDE2;
+  text-decoration:none;
+  font-family:'Nunito', sans-serif;
+  font-weight:600;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.cta-button:hover{
+  background:#A47148;
+  transform:translateY(-2px);
 }
 
 /* ===== LISTA ===== */
@@ -171,26 +188,10 @@ section.quotes{
 .quote{
   background:#FFFFFF;
   padding:15px 20px;
-  margin-bottom:10px;
+  margin-bottom:15px;
   border-left:4px solid #6F4E37;
   border-radius:6px;
   font-style:italic;
-}
-
-/* RESPONSYWNOŚĆ */
-@media(max-width:600px){
-  header h1{
-    font-size:2rem;
-  }
-
-  section.about{
-    padding-top:210px;
-  }
-
-  section.about img{
-    width:180px;
-    height:180px;
-  }
 }
 </style>
 </head>
@@ -214,12 +215,6 @@ section.quotes{
     <a href="#dreamList">Lista marzeń</a>
     <a href="#quotes">Cytaty</a>
   </div>
-
-  <div class="panel-bottom">
-    <a href="#">Instagram</a>
-    <a href="#">Facebook</a>
-    <a href="#">zzz</a>
-  </div>
 </div>
 
 <section class="about" id="about">
@@ -228,6 +223,10 @@ section.quotes{
     To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
     Nie marzenia. Plany.
   </p>
+
+  <a href="#dreamList" class="cta-button" id="goToDreams">
+    Zobacz listę marzeń
+  </a>
 </section>
 
 <section class="list" id="dreamList">
@@ -249,7 +248,9 @@ section.quotes{
     </p>
   </div>
 
-  <div class="quote">lkajsdfhalksjdfhalksjdfh</div>
+  <div class="quote">
+    „… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
+  </div>
 
 </section>
 
@@ -261,6 +262,14 @@ const overlay = document.getElementById("overlay");
 const aboutSection = document.querySelector(".about");
 const listSection = document.querySelector(".list");
 const quotesSection = document.querySelector(".quotes");
+const goToDreams = document.getElementById("goToDreams");
+
+function showSection(section){
+  aboutSection.style.display="none";
+  listSection.style.display="none";
+  quotesSection.style.display="none";
+  section.style.display="block";
+}
 
 hamburger.addEventListener("click", ()=>{
   panel.style.left="0";
@@ -275,20 +284,18 @@ overlay.addEventListener("click", ()=>{
 document.querySelectorAll(".side-panel a").forEach(link=>{
   link.addEventListener("click", (e)=>{
     e.preventDefault();
-
-    aboutSection.style.display="none";
-    listSection.style.display="none";
-    quotesSection.style.display="none";
-
     const target = link.getAttribute("href");
-
-    if(target === "#about") aboutSection.style.display="block";
-    if(target === "#dreamList") listSection.style.display="block";
-    if(target === "#quotes") quotesSection.style.display="block";
-
+    if(target === "#about") showSection(aboutSection);
+    if(target === "#dreamList") showSection(listSection);
+    if(target === "#quotes") showSection(quotesSection);
     panel.style.left="-270px";
     overlay.style.display="none";
   });
+});
+
+goToDreams.addEventListener("click", (e)=>{
+  e.preventDefault();
+  showSection(listSection);
 });
 </script>
 
