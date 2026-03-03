@@ -3,297 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista, która się wydarzy</title>
+<title>My Life Road</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Ikony -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+body {
+    margin: 0;
+    background-color: #f4efe6;
+    font-family: 'EB Garamond', serif;
+    color: #2c2c2c;
 }
 
-body{
-  background:#F3EDE2;
-  color:#2B2B2B;
-  font-family:'EB Garamond', serif;
+/* GÓRNY PASEK */
+header {
+    background-color: #d8cfc1;
+    padding: 20px 25px 20px 80px;
+    position: relative;
 }
 
-/* ===== HEADER ===== */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:85px;
-  background:#6F4E37;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding-left:70px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.25);
-  z-index:1000;
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-family: 'Great Vibes', cursive;
 }
 
-header h1{
-  font-family:'Great Vibes', cursive;
-  font-size:2.4rem;
-  color:#F3EDE2;
-  font-weight:400;
-  letter-spacing:1px;
-  text-align:center;
+/* HAMBURGER */
+.menu-toggle {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    font-size: 28px;
+    cursor: pointer;
 }
 
-.hamburger{
-  position:absolute;
-  left:20px;
-  cursor:pointer;
-  width:30px;
-  height:22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+nav {
+    display: none;
+    background-color: #e6ded1;
+    padding: 15px 0;
+    font-family: 'Nunito', sans-serif;
 }
 
-.hamburger div{
-  height:3px;
-  background:#F3EDE2;
-  border-radius:2px;
+nav a {
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: #2c2c2c;
+    font-size: 18px;
 }
 
-/* ===== MENU ===== */
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.4);
-  display:none;
-  z-index:998;
+nav a:hover {
+    background-color: #d2c7b7;
 }
 
-.side-panel{
-  position:fixed;
-  top:0;
-  left:-270px;
-  width:270px;
-  height:100%;
-  background:#F8F3EA;
-  box-shadow:2px 0 20px rgba(0,0,0,0.2);
-  padding:120px 30px 40px 30px;
-  transition:0.4s ease;
-  z-index:999;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+/* IKONY SOCIAL */
+.social {
+    margin-top: 10px;
+    padding-left: 25px;
 }
 
-.side-panel a{
-  text-decoration:none;
-  color:#6F4E37;
-  font-family:'Nunito', sans-serif;
-  font-size:1.4rem;
-  font-weight:600;
-  margin-bottom:22px;
-  display:block;
-  transition:0.3s;
+.social a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #2c2c2c;
+    text-decoration: none;
 }
 
-.side-panel a:hover{
-  transform:translateX(5px);
-  color:#A47148;
+.social a:hover {
+    opacity: 0.6;
 }
 
-/* ===== ABOUT ===== */
-section.about{
-  padding-top:190px;
-  padding-bottom:60px;
-  text-align:center;
+/* SEKCJE */
+section {
+    padding: 40px 25px;
 }
 
-section.about img{
-  width:210px;
-  height:210px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:30px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.25);
-  border:5px solid #6F4E37;
+/* PRZYCISK */
+.main-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #d8cfc1;
+    text-decoration: none;
+    color: #2c2c2c;
+    border-radius: 25px;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+    transition: 0.3s;
 }
 
-section.about p{
-  max-width:650px;
-  margin:auto;
-  font-size:1.2rem;
-  line-height:1.8;
-  color:#4A3426;
-  padding:0 15px;
+.main-button:hover {
+    background-color: #c7bcae;
 }
 
-/* ===== PRZYCISK ===== */
-.cta-button{
-  margin-top:40px;
-  display:inline-block;
-  padding:14px 28px;
-  background:#6F4E37;
-  color:#F3EDE2;
-  text-decoration:none;
-  font-family:'Nunito', sans-serif;
-  font-weight:600;
-  border-radius:30px;
-  transition:0.3s;
+/* MARZENIA */
+.dream {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffffc7;
+    border-radius: 10px;
 }
 
-.cta-button:hover{
-  background:#A47148;
-  transform:translateY(-2px);
+/* CYTATY */
+.quotes-intro {
+    font-family: 'EB Garamond', serif;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
-/* ===== LISTA ===== */
-section.list{
-  display:none;
-  padding-top:150px;
-  padding-left:20px;
-  padding-right:20px;
-  max-width:800px;
-  margin:auto;
+.quote-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ffffffc7;
+    border-left: 4px solid #b7aa97;
+    font-family: 'Grand Hotel', cursive;
+    font-size: 26px;
 }
 
-.dream{
-  background:#FFFFFF;
-  padding:20px;
-  margin-bottom:15px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  font-size:1.1rem;
-}
-
-/* ===== QUOTES ===== */
-section.quotes{
-  display:none;
-  padding-top:150px;
-  padding-left:20px;
-  padding-right:20px;
-  max-width:800px;
-  margin:auto;
-}
-
-.quote{
-  background:#FFFFFF;
-  padding:15px 20px;
-  margin-bottom:15px;
-  border-left:4px solid #6F4E37;
-  border-radius:6px;
-  font-style:italic;
-}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <h1>Lista, która się wydarzy</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <h1>My Life Road</h1>
 </header>
 
-<div class="overlay" id="overlay"></div>
-
-<div class="side-panel" id="panel">
-  <div>
-    <a href="#about">O mnie</a>
-    <a href="#dreamList">Lista marzeń</a>
+<nav id="menu">
+    <a href="#home">Strona główna</a>
+    <a href="#dreams">Marzenia</a>
     <a href="#quotes">Cytaty</a>
-  </div>
-</div>
 
-<section class="about" id="about">
-  <img src="IMG_8660.jpeg" alt="Moje zdjęcie">
-  <p>
-    To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
-    Nie marzenia. Plany.
-  </p>
+    <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+</nav>
 
-  <a href="#dreamList" class="cta-button" id="goToDreams">
-    Moja lista marzeń
-  </a>
-</section>
-
-<section class="list" id="dreamList">
-  <div class="dream">asdjkhfaskjdhfkjashdf</div>
-</section>
-
-<section class="quotes" id="quotes">
-
-  <div style="margin-bottom:50px; text-align:center; max-width:750px; margin-left:auto; margin-right:auto;">
-    <p style="font-size:1.15rem; line-height:1.9; color:#4A3426;">
-      To miejsce jest dla słów, które coś we mnie zostawiły.<br>
-      Czasem to jedno zdanie. Czasem fragment rozmowy. Czasem coś, co ktoś powiedział przypadkiem, a zostało we mnie na dłużej.
-      <br><br>
-      Tak się jakoś układa, że często rozmawiam z ludźmi dużo starszymi ode mnie.
-      I bardzo często można się od nich nauczyć więcej, niż się spodziewałem.
-      <br><br>
-      Zawsze chciałem mieć miejsce, do którego mogę wrócić i przypomnieć sobie coś mądrego, co kiedyś usłyszałem.
-      Mam nadzieję, że to właśnie jest takie miejsce.
+<section id="home">
+    <h2>Lista, która się wydarzy</h2>
+    <p>
+        Strona, która przypomina mi, że marzenia nie są po to, żeby czekać.
+        Są po to, żeby je spełniać.
     </p>
-  </div>
 
-  <div class="quote">
-    „… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
-  </div>
+    <a href="#dreams" class="main-button">Moja lista marzeń</a>
+</section>
 
+<section id="dreams">
+    <h2>Moje marzenia</h2>
+
+    <div class="dream">
+        asdlfkjhasdlfkjhasdlfkjh
+    </div>
+</section>
+
+<section id="quotes">
+    <h2>Cytaty</h2>
+
+    <div class="quotes-intro">
+        <p>
+        To miejsce jest dla słów, które coś we mnie zostawiły.
+        Czasem to jedno zdanie. Czasem fragment rozmowy.
+        Czasem coś, co ktoś powiedział przypadkiem, a zostało we mnie na dłużej.
+        </p>
+
+        <p>
+        Tak się zawsze jakoś układa, że dużo rozmawiam z ludźmi dużo starszymi ode mnie,
+        i często bardzo wiele można się nauczyć od takich osób.
+        Zawsze chciałem mieć miejsce, w które mogę sobie przypomnieć coś mądrego,
+        co usłyszałem — i to mam nadzieję jest właśnie takie miejsce.
+        </p>
+    </div>
+
+    <div class="quote-box">
+        „… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
+    </div>
 </section>
 
 <script>
-const hamburger = document.getElementById("hamburger");
-const panel = document.getElementById("panel");
-const overlay = document.getElementById("overlay");
-
-const aboutSection = document.querySelector(".about");
-const listSection = document.querySelector(".list");
-const quotesSection = document.querySelector(".quotes");
-const goToDreams = document.getElementById("goToDreams");
-
-function showSection(section){
-  aboutSection.style.display="none";
-  listSection.style.display="none";
-  quotesSection.style.display="none";
-  section.style.display="block";
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-
-hamburger.addEventListener("click", ()=>{
-  panel.style.left="0";
-  overlay.style.display="block";
-});
-
-overlay.addEventListener("click", ()=>{
-  panel.style.left="-270px";
-  overlay.style.display="none";
-});
-
-document.querySelectorAll(".side-panel a").forEach(link=>{
-  link.addEventListener("click", (e)=>{
-    e.preventDefault();
-    const target = link.getAttribute("href");
-    if(target === "#about") showSection(aboutSection);
-    if(target === "#dreamList") showSection(listSection);
-    if(target === "#quotes") showSection(quotesSection);
-    panel.style.left="-270px";
-    overlay.style.display="none";
-  });
-});
-
-goToDreams.addEventListener("click", (e)=>{
-  e.preventDefault();
-  showSection(listSection);
-});
 </script>
 
 </body>
