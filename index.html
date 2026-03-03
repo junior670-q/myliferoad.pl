@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lista, która się wydarzy</title>
 
-<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -127,7 +125,6 @@ section.about img{
   border-radius:50%;
   object-fit:cover;
   object-position:center;
-  margin-top:0px;
   margin-bottom:30px;
   box-shadow:0 15px 40px rgba(0,0,0,0.25);
   border:5px solid #6F4E37;
@@ -182,7 +179,6 @@ section.quotes{
 
 /* RESPONSYWNOŚĆ */
 @media(max-width:600px){
-
   header h1{
     font-size:2rem;
   }
@@ -235,19 +231,36 @@ section.quotes{
 </section>
 
 <section class="list" id="dreamList">
-  <div class="dream">1</div>
-  <div class="dream">2</div>
+  <div class="dream">asdjkhfaskjdhfkjashdf</div>
 </section>
 
 <section class="quotes" id="quotes">
-  <div class="quote">Cytat 1</div>
-  <div class="quote">Cytat 2</div>
+
+  <div style="margin-bottom:50px; text-align:center; max-width:750px; margin-left:auto; margin-right:auto;">
+    <p style="font-size:1.15rem; line-height:1.9; color:#4A3426;">
+      To miejsce jest dla słów, które coś we mnie zostawiły.<br>
+      Czasem to jedno zdanie. Czasem fragment rozmowy. Czasem coś, co ktoś powiedział przypadkiem, a zostało we mnie na dłużej.
+      <br><br>
+      Tak się jakoś układa, że często rozmawiam z ludźmi dużo starszymi ode mnie.
+      I bardzo często można się od nich nauczyć więcej, niż się spodziewałem.
+      <br><br>
+      Zawsze chciałem mieć miejsce, do którego mogę wrócić i przypomnieć sobie coś mądrego, co kiedyś usłyszałem.
+      Mam nadzieję, że to właśnie jest takie miejsce.
+    </p>
+  </div>
+
+  <div class="quote">lkajsdfhalksjdfhalksjdfh</div>
+
 </section>
 
 <script>
 const hamburger = document.getElementById("hamburger");
 const panel = document.getElementById("panel");
 const overlay = document.getElementById("overlay");
+
+const aboutSection = document.querySelector(".about");
+const listSection = document.querySelector(".list");
+const quotesSection = document.querySelector(".quotes");
 
 hamburger.addEventListener("click", ()=>{
   panel.style.left="0";
@@ -257,6 +270,25 @@ hamburger.addEventListener("click", ()=>{
 overlay.addEventListener("click", ()=>{
   panel.style.left="-270px";
   overlay.style.display="none";
+});
+
+document.querySelectorAll(".side-panel a").forEach(link=>{
+  link.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    aboutSection.style.display="none";
+    listSection.style.display="none";
+    quotesSection.style.display="none";
+
+    const target = link.getAttribute("href");
+
+    if(target === "#about") aboutSection.style.display="block";
+    if(target === "#dreamList") listSection.style.display="block";
+    if(target === "#quotes") quotesSection.style.display="block";
+
+    panel.style.left="-270px";
+    overlay.style.display="none";
+  });
 });
 </script>
 
