@@ -10,6 +10,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
+<!-- ikonki -->
+<script src="https://kit.fontawesome.com/6c5c0a5e65.js" crossorigin="anonymous"></script>
+
 <style>
 
 *{
@@ -112,24 +115,23 @@ transform:translateX(5px);
 color:#A47148;
 }
 
-/* SOCIAL */
+/* SOCIAL IKONY */
 
 .socials{
 display:flex;
-gap:20px;
 justify-content:center;
-margin-top:40px;
+gap:25px;
+font-size:26px;
 }
 
 .socials a{
-font-size:26px;
 color:#6F4E37;
 transition:0.3s;
 }
 
 .socials a:hover{
 color:#A47148;
-transform:scale(1.15);
+transform:scale(1.2);
 }
 
 /* ABOUT */
@@ -179,7 +181,7 @@ background:#A47148;
 transform:translateY(-2px);
 }
 
-/* LIST */
+/* LISTA */
 
 section.list{
 display:none;
@@ -199,7 +201,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 font-size:1.1rem;
 }
 
-/* QUOTES */
+/* CYTATY */
 
 section.quotes{
 display:none;
@@ -210,44 +212,30 @@ max-width:800px;
 margin:auto;
 }
 
-/* KARTKA / LIST */
+/* KARTKA Z OPISEM */
 
-.quote{
+.quote-note{
 background:#fffdf8;
 padding:35px;
-margin-bottom:30px;
+margin-bottom:50px;
 border-radius:6px;
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 font-family:'Caveat', cursive;
 font-size:1.6rem;
 line-height:1.8;
 color:#2c2c2c;
-position:relative;
 }
 
-.quote:before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-right:0;
-height:40px;
-background:linear-gradient(rgba(0,0,0,0.03), transparent);
-border-radius:6px 6px 0 0;
-}
-
-.quote-author{
-margin-top:20px;
-font-size:1.2rem;
-text-align:right;
-font-family:'EB Garamond', serif;
+.quote{
+background:#FFFFFF;
+padding:15px 20px;
+margin-bottom:15px;
+border-left:4px solid #6F4E37;
+border-radius:6px;
+font-style:italic;
 }
 
 </style>
-
-<!-- IKONKI -->
-<script src="https://kit.fontawesome.com/6c5c0a5e65.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -274,11 +262,11 @@ font-family:'EB Garamond', serif;
 
 <div class="socials">
 
-<a href="https://instagram.com/" target="_blank">
+<a href="https://instagram.com/TWOJ_PROFIL" target="_blank">
 <i class="fab fa-instagram"></i>
 </a>
 
-<a href="https://twitter.com/" target="_blank">
+<a href="https://twitter.com/TWOJ_PROFIL" target="_blank">
 <i class="fab fa-x-twitter"></i>
 </a>
 
@@ -288,7 +276,7 @@ font-family:'EB Garamond', serif;
 
 <section class="about" id="about">
 
-<img src="IMG_8660.jpeg">
+<img src="IMG_8660.jpeg" alt="Moje zdjęcie">
 
 <p>
 To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
@@ -311,9 +299,7 @@ asdjkhfaskjdhfkjashdf
 
 <section class="quotes" id="quotes">
 
-<div style="margin-bottom:50px;text-align:center;max-width:750px;margin-left:auto;margin-right:auto;">
-
-<p style="font-size:1.15rem;line-height:1.9;color:#4A3426;">
+<div class="quote-note">
 
 To miejsce jest dla słów, które coś we mnie zostawiły.<br>
 Czasem to jedno zdanie. Czasem fragment rozmowy. Czasem coś, co ktoś powiedział przypadkiem, a zostało we mnie na dłużej.
@@ -326,21 +312,12 @@ I bardzo często można się od nich nauczyć więcej, niż się spodziewałem.
 <br><br>
 
 Zawsze chciałem mieć miejsce, do którego mogę wrócić i przypomnieć sobie coś mądrego, co kiedyś usłyszałem.
-
 Mam nadzieję, że to właśnie jest takie miejsce.
-
-</p>
 
 </div>
 
 <div class="quote">
-
-„… nie nie, marzenia się nie spełniają. Marzenia się spełnia”
-
-<div class="quote-author">
-~ N.S
-</div>
-
+„… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
 </div>
 
 </section>
@@ -354,37 +331,27 @@ const overlay = document.getElementById("overlay");
 const aboutSection = document.querySelector(".about");
 const listSection = document.querySelector(".list");
 const quotesSection = document.querySelector(".quotes");
-
 const goToDreams = document.getElementById("goToDreams");
 
 function showSection(section){
-
 aboutSection.style.display="none";
 listSection.style.display="none";
 quotesSection.style.display="none";
-
 section.style.display="block";
-
 }
 
 hamburger.addEventListener("click", ()=>{
-
 panel.style.left="0";
 overlay.style.display="block";
-
 });
 
 overlay.addEventListener("click", ()=>{
-
 panel.style.left="-270px";
 overlay.style.display="none";
-
 });
 
 document.querySelectorAll(".side-panel a").forEach(link=>{
-
-link.addEventListener("click",(e)=>{
-
+link.addEventListener("click", (e)=>{
 e.preventDefault();
 
 const target = link.getAttribute("href");
@@ -395,16 +362,12 @@ if(target === "#quotes") showSection(quotesSection);
 
 panel.style.left="-270px";
 overlay.style.display="none";
-
+});
 });
 
-});
-
-goToDreams.addEventListener("click",(e)=>{
-
+goToDreams.addEventListener("click", (e)=>{
 e.preventDefault();
 showSection(listSection);
-
 });
 
 </script>
