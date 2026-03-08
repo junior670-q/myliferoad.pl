@@ -7,8 +7,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
 html{
@@ -26,24 +29,26 @@ background:#F3EDE2;
 color:#2B2B2B;
 font-family:'EB Garamond', serif;
 }
+
 /* ===== SOCIAL IKONY ===== */
 
 .socials{
-  display:flex;
-  gap:18px;
-  margin-top:30px;
+display:flex;
+gap:18px;
+margin-top:30px;
 }
 
 .socials a{
-  font-size:22px;
-  color:#6F4E37;
-  transition:0.3s;
+font-size:22px;
+color:#6F4E37;
+transition:0.3s;
 }
 
 .socials a:hover{
-  color:#A47148;
-  transform:scale(1.15);
+color:#A47148;
+transform:scale(1.15);
 }
+
 /* ===== HEADER ===== */
 
 header{
@@ -172,6 +177,7 @@ font-family:'Nunito', sans-serif;
 font-weight:600;
 border-radius:30px;
 transition:0.3s;
+cursor:pointer;
 }
 
 .cta-button:hover{
@@ -217,6 +223,7 @@ margin-bottom:15px;
 border-left:4px solid #6F4E37;
 border-radius:6px;
 font-style:italic;
+white-space:pre-line;
 }
 
 </style>
@@ -225,33 +232,38 @@ font-style:italic;
 <body>
 
 <header>
+
 <div class="hamburger" id="hamburger">
 <div></div>
 <div></div>
 <div></div>
 </div>
+
 <h1>Lista, która się wydarzy</h1>
+
 </header>
 
 <div class="overlay" id="overlay"></div>
 
 <div class="side-panel" id="panel">
 
-  <div>
-    <a href="#about">O mnie</a>
-    <a href="#dreamList">Lista marzeń</a>
-    <a href="#quotes">Cytaty</a>
-  </div>
+<div>
+<a href="#about">O mnie</a>
+<a href="#dreamList">Lista marzeń</a>
+<a href="#quotes">Cytaty</a>
+</div>
 
-  <div class="socials">
-    <a href="https://www.instagram.com/_szymonn.p?igsh=eTF2bXZrdWI2ZTFh&utm_source=qrtarget="_blank">
-      <i class="fab fa-instagram"></i>
-    </a>
+<div class="socials">
 
-    <a href="https://twitter.com/TWOJ_PROFIL" target="_blank">
-      <i class="fab fa-x-twitter"></i>
-    </a>
-  </div>
+<a href="https://www.instagram.com/_szymonn.p" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://twitter.com/TWOJ_PROFIL" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+</div>
 
 </div>
 
@@ -264,7 +276,7 @@ To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
 Nie marzenia. Plany.
 </p>
 
-<a class="cta-button">
+<a class="cta-button" id="goToDreams">
 Moja lista marzeń
 </a>
 
@@ -305,6 +317,64 @@ Mam nadzieję, że to właśnie jest takie miejsce.
 „… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
 </div>
 
+<div class="quote">
+„Panowie świętują tylko to, o co naprawdę musieli walczyć. Urodziny do tego nie należą” ~ A.T
+</div>
+
+<div class="quote">
+„Wyobraź sobie że leżysz na łożu śmierci. W pokoju zapada cisza, a ty czujesz, że twoje ostatnie chwile zbliżają się nieubłaganie.
+
+Wtedy otwierają się drzwi, z hukiem.
+
+Wchodzą postacie, jedna po drugiej. Wyglądają znajomo, ale każda z tych osób ma w sobie żal i coś przerażającego.
+
+To twoje niezrealizowane marzenia, cele i plany które porzuciłeś. Potencjał którego nigdy nie wykorzystałeś.
+
+Podchodzą bliżej i otaczają twoje łóżko.
+
+Jeden z nich mówi:
+„Byłem twoją odwagą, ale nigdy nie pozwoliłeś mi się narodzić.”
+
+Drugi dodaje:
+„Byłem życiem które mogłeś prowadzić, gdybyś tylko działał każdego dnia.”
+
+Trzeci mówi cicho:
+„Byłem radością i dumą twojej rodziny, która nigdy nie zobaczyła do czego naprawdę byłeś zdolny.”
+
+I nagle zdajesz sobie sprawę, że to nie oni cię osądzają.
+
+Tylko ty sam.
+
+Twoje sumienie.
+
+Twoje serce.
+
+A teraz jest za późno.
+
+Nie możesz cofnąć czasu.
+Nie możesz zacząć od nowa.
+
+Czy naprawdę chcesz, by ten moment kiedyś stał się twoją rzeczywistością?
+
+Jeśli nie — wstań.
+
+Działaj.
+
+Bo każdy kolejny dzień odkładania czegoś „na potem” przybliża cię do takiego finału.”
+</div>
+
+<div class="quote">
+„Sukces to przechodzenie od porażki do porażki bez utraty entuzjazmu” ~ W.C
+</div>
+
+<div class="quote">
+„Nie ma skrótów do miejsca do którego warto dojść” ~ M.P
+</div>
+
+<div class="quote">
+„Punkt widzenia zależy od punktu siedzenia”
+</div>
+
 </section>
 
 <script>
@@ -316,6 +386,8 @@ const overlay = document.getElementById("overlay");
 const aboutSection = document.querySelector(".about");
 const listSection = document.querySelector(".list");
 const quotesSection = document.querySelector(".quotes");
+
+const goToDreams = document.getElementById("goToDreams");
 
 function showSection(section){
 
@@ -357,6 +429,12 @@ panel.style.left="-270px";
 overlay.style.display="none";
 
 });
+
+});
+
+goToDreams.addEventListener("click", ()=>{
+
+showSection(listSection);
 
 });
 
