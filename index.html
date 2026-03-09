@@ -14,15 +14,9 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 background:#F3EDE2;
@@ -30,7 +24,7 @@ color:#2B2B2B;
 font-family:'EB Garamond', serif;
 }
 
-/* ===== SOCIAL IKONY ===== */
+/* SOCIAL */
 
 .socials{
 display:flex;
@@ -49,7 +43,7 @@ color:#A47148;
 transform:scale(1.15);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
 position:fixed;
@@ -71,9 +65,9 @@ font-family:'Great Vibes', cursive;
 font-size:2.4rem;
 color:#F3EDE2;
 font-weight:400;
-letter-spacing:1px;
-text-align:center;
 }
+
+/* HAMBURGER */
 
 .hamburger{
 position:absolute;
@@ -89,10 +83,9 @@ justify-content:space-between;
 .hamburger div{
 height:3px;
 background:#F3EDE2;
-border-radius:2px;
 }
 
-/* ===== MENU ===== */
+/* MENU */
 
 .overlay{
 position:fixed;
@@ -114,7 +107,7 @@ height:100%;
 background:#F8F3EA;
 box-shadow:2px 0 20px rgba(0,0,0,0.2);
 padding:120px 30px 40px 30px;
-transition:0.4s ease;
+transition:0.4s;
 z-index:999;
 display:flex;
 flex-direction:column;
@@ -129,15 +122,9 @@ font-size:1.4rem;
 font-weight:600;
 margin-bottom:22px;
 display:block;
-transition:0.3s;
 }
 
-.side-panel a:hover{
-transform:translateX(5px);
-color:#A47148;
-}
-
-/* ===== ABOUT ===== */
+/* ABOUT */
 
 section.about{
 padding-top:190px;
@@ -151,7 +138,6 @@ height:210px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:30px;
-box-shadow:0 15px 40px rgba(0,0,0,0.25);
 border:5px solid #6F4E37;
 }
 
@@ -164,7 +150,7 @@ color:#4A3426;
 padding:0 15px;
 }
 
-/* ===== PRZYCISK ===== */
+/* BUTTON */
 
 .cta-button{
 margin-top:40px;
@@ -172,52 +158,66 @@ display:inline-block;
 padding:14px 28px;
 background:#6F4E37;
 color:#F3EDE2;
-text-decoration:none;
 font-family:'Nunito', sans-serif;
-font-weight:600;
 border-radius:30px;
-transition:0.3s;
 cursor:pointer;
 }
 
-.cta-button:hover{
-background:#A47148;
-transform:translateY(-2px);
-}
-
-/* ===== LISTA ===== */
+/* LISTA MARZEŃ */
 
 section.list{
 display:none;
 padding-top:150px;
+max-width:900px;
+margin:auto;
 padding-left:20px;
 padding-right:20px;
-max-width:800px;
-margin:auto;
 }
 
 .dream{
-background:#FFFFFF;
+background:#fff;
 padding:20px;
-margin-bottom:15px;
+margin-bottom:18px;
 border-radius:12px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
-font-size:1.1rem;
 }
 
-/* ===== QUOTES ===== */
+.dream h3{
+margin-bottom:10px;
+}
+
+.status{
+font-size:0.9rem;
+color:#666;
+margin-bottom:10px;
+}
+
+.gallery{
+display:flex;
+gap:10px;
+margin-top:10px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:100px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* QUOTES */
 
 section.quotes{
 display:none;
 padding-top:150px;
-padding-left:20px;
-padding-right:20px;
 max-width:800px;
 margin:auto;
+padding-left:20px;
+padding-right:20px;
 }
 
 .quote{
-background:#FFFFFF;
+background:#fff;
 padding:15px 20px;
 margin-bottom:15px;
 border-left:4px solid #6F4E37;
@@ -255,12 +255,8 @@ white-space:pre-line;
 
 <div class="socials">
 
-<a href="https://www.instagram.com/_szymonn.p" target="_blank">
+<a href="https://www.instagram.com/_szymonn.p/" target="_blank">
 <i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://twitter.com/TWOJ_PROFIL" target="_blank">
-<i class="fab fa-x-twitter"></i>
 </a>
 
 </div>
@@ -269,7 +265,7 @@ white-space:pre-line;
 
 <section class="about" id="about">
 
-<img src="IMG_8660.jpeg" alt="Moje zdjęcie">
+<img src="IMG_8660.jpeg">
 
 <p>
 To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
@@ -285,36 +281,125 @@ Moja lista marzeń
 <section class="list" id="dreamList">
 
 <div class="dream">
-asdjkhfaskjdhfkjashdf
+<h3>Awansować na stopień aspiranta i ukończyć szkołę aspirantów PSP</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Być świadkiem na ślubie</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Dotknąć lwa na żywo</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Kupić mieszkanie pod wynajem</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Kupić swoją własną broń</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Kupić jedną uncję złota</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Nauczyć się drukować na drukarce 3D</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Nauczyć się płynnie mówić po angielsku</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Oddać krew potrzebującym</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Odwiedzić Dubaj</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Odwiedzić Safari w Afryce</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Poprowadzić wóz strażacki do akcji</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Przebiec maraton</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Skoczyć ze spadochronem</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Uratować komuś życie</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Zbudować swój własny dom</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Zdać maturę</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Zostać strażakiem OSP</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
+</div>
+
+<div class="dream">
+<h3>Zostać strażakiem PSP</h3>
+<div class="status">Status: w trakcie</div>
+<div class="gallery"></div>
 </div>
 
 </section>
 
 <section class="quotes" id="quotes">
 
-<div style="margin-bottom:50px; text-align:center; max-width:750px; margin-left:auto; margin-right:auto;">
-
-<p style="font-size:1.15rem; line-height:1.9; color:#4A3426;">
-
-To miejsce jest dla słów, które coś we mnie zostawiły.<br>
-Czasem to jedno zdanie. Czasem fragment rozmowy. Czasem coś, co ktoś powiedział przypadkiem, a zostało we mnie na dłużej.
-
-<br><br>
-
-Tak się jakoś układa, że często rozmawiam z ludźmi dużo starszymi ode mnie.
-I bardzo często można się od nich nauczyć więcej, niż się spodziewałem.
-
-<br><br>
-
-Zawsze chciałem mieć miejsce, do którego mogę wrócić i przypomnieć sobie coś mądrego, co kiedyś usłyszałem.
-Mam nadzieję, że to właśnie jest takie miejsce.
-
-</p>
-
-</div>
-
 <div class="quote">
-„… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
+„Nie ma skrótów do miejsca do którego warto dojść” ~ M.P
 </div>
 
 <div class="quote">
@@ -322,45 +407,7 @@ Mam nadzieję, że to właśnie jest takie miejsce.
 </div>
 
 <div class="quote">
-„Wyobraź sobie że leżysz na łożu śmierci. W pokoju zapada cisza, a ty czujesz, że twoje ostatnie chwile zbliżają się nieubłaganie.
-
-Wtedy otwierają się drzwi, z hukiem.
-
-Wchodzą postacie, jedna po drugiej. Wyglądają znajomo, ale każda z tych osób ma w sobie żal i coś przerażającego.
-
-To twoje niezrealizowane marzenia, cele i plany które porzuciłeś. Potencjał którego nigdy nie wykorzystałeś.
-
-Podchodzą bliżej i otaczają twoje łóżko.
-
-Jeden z nich mówi:
-„Byłem twoją odwagą, ale nigdy nie pozwoliłeś mi się narodzić.”
-
-Drugi dodaje:
-„Byłem życiem które mogłeś prowadzić, gdybyś tylko działał każdego dnia.”
-
-Trzeci mówi cicho:
-„Byłem radością i dumą twojej rodziny, która nigdy nie zobaczyła do czego naprawdę byłeś zdolny.”
-
-I nagle zdajesz sobie sprawę, że to nie oni cię osądzają.
-
-Tylko ty sam.
-
-Twoje sumienie.
-
-Twoje serce.
-
-A teraz jest za późno.
-
-Nie możesz cofnąć czasu.
-Nie możesz zacząć od nowa.
-
-Czy naprawdę chcesz, by ten moment kiedyś stał się twoją rzeczywistością?
-
-Jeśli nie — wstań.
-
-Działaj.
-
-Bo każdy kolejny dzień odkładania czegoś „na potem” przybliża cię do takiego finału.”
+„Punkt widzenia zależy od punktu siedzenia”
 </div>
 
 <div class="quote">
@@ -368,11 +415,7 @@ Bo każdy kolejny dzień odkładania czegoś „na potem” przybliża cię do t
 </div>
 
 <div class="quote">
-„Nie ma skrótów do miejsca do którego warto dojść” ~ M.P
-</div>
-
-<div class="quote">
-„Punkt widzenia zależy od punktu siedzenia”
+„… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
 </div>
 
 </section>
@@ -399,44 +442,38 @@ section.style.display="block";
 
 }
 
-hamburger.addEventListener("click", ()=>{
-
+hamburger.onclick=()=>{
 panel.style.left="0";
 overlay.style.display="block";
+};
 
-});
-
-overlay.addEventListener("click", ()=>{
-
+overlay.onclick=()=>{
 panel.style.left="-270px";
 overlay.style.display="none";
-
-});
+};
 
 document.querySelectorAll(".side-panel a").forEach(link=>{
 
-link.addEventListener("click", (e)=>{
+link.onclick=(e)=>{
 
 e.preventDefault();
 
-const target = link.getAttribute("href");
+const target=link.getAttribute("href");
 
-if(target === "#about") showSection(aboutSection);
-if(target === "#dreamList") showSection(listSection);
-if(target === "#quotes") showSection(quotesSection);
+if(target=="#about")showSection(aboutSection);
+if(target=="#dreamList")showSection(listSection);
+if(target=="#quotes")showSection(quotesSection);
 
 panel.style.left="-270px";
 overlay.style.display="none";
 
-});
+};
 
 });
 
-goToDreams.addEventListener("click", ()=>{
-
+goToDreams.onclick=()=>{
 showSection(listSection);
-
-});
+};
 
 </script>
 
