@@ -7,9 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Grand+Hotel&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -24,25 +22,6 @@ color:#2B2B2B;
 font-family:'EB Garamond', serif;
 }
 
-/* SOCIAL */
-
-.socials{
-display:flex;
-gap:18px;
-margin-top:30px;
-}
-
-.socials a{
-font-size:22px;
-color:#6F4E37;
-transition:0.3s;
-}
-
-.socials a:hover{
-color:#A47148;
-transform:scale(1.15);
-}
-
 /* HEADER */
 
 header{
@@ -55,7 +34,6 @@ background:#6F4E37;
 display:flex;
 align-items:center;
 justify-content:center;
-padding-left:70px;
 box-shadow:0 4px 15px rgba(0,0,0,0.25);
 z-index:1000;
 }
@@ -64,7 +42,6 @@ header h1{
 font-family:'Great Vibes', cursive;
 font-size:2.4rem;
 color:#F3EDE2;
-font-weight:400;
 }
 
 /* HAMBURGER */
@@ -95,7 +72,6 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.4);
 display:none;
-z-index:998;
 }
 
 .side-panel{
@@ -105,10 +81,8 @@ left:-270px;
 width:270px;
 height:100%;
 background:#F8F3EA;
-box-shadow:2px 0 20px rgba(0,0,0,0.2);
-padding:120px 30px 40px 30px;
+padding:120px 30px;
 transition:0.4s;
-z-index:999;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -118,106 +92,132 @@ justify-content:space-between;
 text-decoration:none;
 color:#6F4E37;
 font-family:'Nunito', sans-serif;
-font-size:1.4rem;
-font-weight:600;
-margin-bottom:22px;
-display:block;
+font-size:1.3rem;
+margin-bottom:20px;
+}
+
+.socials a{
+font-size:22px;
+color:#6F4E37;
+margin-right:15px;
 }
 
 /* ABOUT */
 
-section.about{
-padding-top:190px;
-padding-bottom:60px;
+.about{
+padding-top:180px;
 text-align:center;
 }
 
-section.about img{
+.about img{
 width:210px;
 height:210px;
 border-radius:50%;
 object-fit:cover;
-margin-bottom:30px;
 border:5px solid #6F4E37;
 }
 
-section.about p{
+.about p{
 max-width:650px;
-margin:auto;
+margin:30px auto;
 font-size:1.2rem;
 line-height:1.8;
-color:#4A3426;
-padding:0 15px;
 }
 
-/* BUTTON */
-
 .cta-button{
-margin-top:40px;
-display:inline-block;
-padding:14px 28px;
+padding:14px 30px;
 background:#6F4E37;
-color:#F3EDE2;
-font-family:'Nunito', sans-serif;
+color:white;
 border-radius:30px;
 cursor:pointer;
+display:inline-block;
+margin-top:20px;
 }
 
 /* LISTA MARZEŃ */
 
-section.list{
+.list{
 display:none;
 padding-top:150px;
 max-width:900px;
 margin:auto;
-padding-left:20px;
-padding-right:20px;
+padding:20px;
+}
+
+.progress{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:25px;
+text-align:center;
+font-family:'Nunito';
 }
 
 .dream{
-background:#fff;
+background:white;
 padding:20px;
-margin-bottom:18px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-.dream h3{
-margin-bottom:10px;
+border-radius:10px;
+margin-bottom:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
 .status{
 font-size:0.9rem;
+margin-top:5px;
 color:#666;
-margin-bottom:10px;
 }
 
 .gallery{
 display:flex;
 gap:10px;
-margin-top:10px;
+margin-top:12px;
 flex-wrap:wrap;
 }
 
 .gallery img{
-width:100px;
-border-radius:8px;
+width:110px;
+border-radius:6px;
 cursor:pointer;
+}
+
+.add-photo{
+margin-top:10px;
+font-size:0.9rem;
+cursor:pointer;
+color:#6F4E37;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
 }
 
 /* QUOTES */
 
-section.quotes{
+.quotes{
 display:none;
 padding-top:150px;
 max-width:800px;
 margin:auto;
-padding-left:20px;
-padding-right:20px;
+padding:20px;
 }
 
 .quote{
-background:#fff;
+background:white;
 padding:15px 20px;
 margin-bottom:15px;
 border-left:4px solid #6F4E37;
@@ -232,15 +232,12 @@ white-space:pre-line;
 <body>
 
 <header>
-
 <div class="hamburger" id="hamburger">
 <div></div>
 <div></div>
 <div></div>
 </div>
-
 <h1>Lista, która się wydarzy</h1>
-
 </header>
 
 <div class="overlay" id="overlay"></div>
@@ -254,11 +251,8 @@ white-space:pre-line;
 </div>
 
 <div class="socials">
-
-<a href="https://www.instagram.com/_szymonn.p/" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
+<a href="https://www.instagram.com/_szymonn.p/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
 </div>
 
 </div>
@@ -272,127 +266,43 @@ To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
 Nie marzenia. Plany.
 </p>
 
-<a class="cta-button" id="goToDreams">
-Moja lista marzeń
-</a>
+<div class="cta-button" id="goToDreams">Moja lista marzeń</div>
 
 </section>
 
 <section class="list" id="dreamList">
 
-<div class="dream">
-<h3>Awansować na stopień aspiranta i ukończyć szkołę aspirantów PSP</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
+<div class="progress">
+Postęp realizacji marzeń: <span id="progress"></span>
 </div>
 
-<div class="dream">
-<h3>Być świadkiem na ślubie</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
+<!-- MARZENIA -->
 
-<div class="dream">
-<h3>Dotknąć lwa na żywo</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Kupić mieszkanie pod wynajem</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Kupić swoją własną broń</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Kupić jedną uncję złota</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Nauczyć się drukować na drukarce 3D</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Nauczyć się płynnie mówić po angielsku</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Oddać krew potrzebującym</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Odwiedzić Dubaj</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Odwiedzić Safari w Afryce</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Poprowadzić wóz strażacki do akcji</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Przebiec maraton</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Skoczyć ze spadochronem</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Uratować komuś życie</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Zbudować swój własny dom</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Zdać maturę</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Zostać strażakiem OSP</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
-
-<div class="dream">
-<h3>Zostać strażakiem PSP</h3>
-<div class="status">Status: w trakcie</div>
-<div class="gallery"></div>
-</div>
+<div class="dream"><h3>Awansować na stopień aspiranta i zaliczyć szkołę aspirantów PSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Być świadkiem na ślubie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Dotknąć lwa na żywo</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Kupić i odebrać swoje nowe auto z salonu</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Kupić jedną uncję złota</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Kupić mieszkanie pod wynajem</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Kupić mieszkanie lub dom za granicą</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Kupić swoją własną broń</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się drukować na drukarce 3D</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się grać na gitarze</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się grać na pianinie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się jeździć na snowboardzie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się płynnie mówić po angielsku</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Nauczyć się płynnie mówić po hiszpańsku</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Oddać krew potrzebującym</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Odwiedzić Dubaj</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Odwiedzić Safari w Afryce</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Poprowadzić wóz strażacki do akcji</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Przebiec maraton</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Skoczyć ze spadochronem</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Uratować komuś życie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Zbudować swój własny dom</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Zdać maturę</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Zostać strażakiem OSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
+<div class="dream"><h3>Zostać strażakiem PSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
 
 </section>
 
@@ -418,62 +328,86 @@ Moja lista marzeń
 „… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
 </div>
 
+<div class="quote">
+Wyobraź sobie że leżysz na łożu śmierci...
+
+Wtedy otwierają się drzwi.
+
+Wchodzą twoje niezrealizowane marzenia.
+
+„Byłem twoją odwagą.”
+
+„Byłem życiem które mogłeś prowadzić.”
+
+„Byłem dumą twojej rodziny.”
+
+I wtedy rozumiesz, że to ty sam jesteś swoim największym sędzią.
+
+Czy naprawdę chcesz, by ten moment kiedyś stał się twoją rzeczywistością?
+
+Jeśli nie — wstań i działaj.
+</div>
+
 </section>
+
+<div class="lightbox" id="lightbox">
+<img id="lightboxImg">
+</div>
 
 <script>
 
-const hamburger = document.getElementById("hamburger");
-const panel = document.getElementById("panel");
-const overlay = document.getElementById("overlay");
+const hamburger=document.getElementById("hamburger");
+const panel=document.getElementById("panel");
+const overlay=document.getElementById("overlay");
 
-const aboutSection = document.querySelector(".about");
-const listSection = document.querySelector(".list");
-const quotesSection = document.querySelector(".quotes");
+const about=document.querySelector(".about");
+const list=document.querySelector(".list");
+const quotes=document.querySelector(".quotes");
 
-const goToDreams = document.getElementById("goToDreams");
-
-function showSection(section){
-
-aboutSection.style.display="none";
-listSection.style.display="none";
-quotesSection.style.display="none";
-
+function show(section){
+about.style.display="none";
+list.style.display="none";
+quotes.style.display="none";
 section.style.display="block";
-
 }
 
-hamburger.onclick=()=>{
-panel.style.left="0";
-overlay.style.display="block";
-};
-
-overlay.onclick=()=>{
-panel.style.left="-270px";
-overlay.style.display="none";
-};
+hamburger.onclick=()=>{panel.style.left="0";overlay.style.display="block";}
+overlay.onclick=()=>{panel.style.left="-270px";overlay.style.display="none";}
 
 document.querySelectorAll(".side-panel a").forEach(link=>{
-
 link.onclick=(e)=>{
-
 e.preventDefault();
-
-const target=link.getAttribute("href");
-
-if(target=="#about")showSection(aboutSection);
-if(target=="#dreamList")showSection(listSection);
-if(target=="#quotes")showSection(quotesSection);
-
+let target=link.getAttribute("href");
+if(target=="#about")show(about);
+if(target=="#dreamList")show(list);
+if(target=="#quotes")show(quotes);
 panel.style.left="-270px";
 overlay.style.display="none";
-
-};
-
+}
 });
 
-goToDreams.onclick=()=>{
-showSection(listSection);
-};
+document.getElementById("goToDreams").onclick=()=>show(list);
+
+/* PROGRESS */
+
+const dreams=document.querySelectorAll(".dream");
+const completed=document.querySelectorAll(".dream.completed");
+let percent=Math.round((completed.length/dreams.length)*100);
+document.getElementById("progress").innerText=percent+"%";
+
+/* LIGHTBOX */
+
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightboxImg");
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+img.onclick=()=>{
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+}
+});
+
+lightbox.onclick=()=>{lightbox.style.display="none";}
 
 </script>
 
