@@ -2,412 +2,263 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista, która się wydarzy</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Moja lista marzeń</title>
 
 <style>
 
-html{scroll-behavior:smooth;}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-background:#F3EDE2;
-color:#2B2B2B;
-font-family:'EB Garamond', serif;
+font-family:Arial;
+margin:0;
+background:#111;
+color:white;
 }
-
-/* HEADER */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:85px;
-background:#6F4E37;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 4px 15px rgba(0,0,0,0.25);
-z-index:1000;
+background:#000;
+padding:20px;
+text-align:center;
+font-size:28px;
 }
 
-header h1{
-font-family:'Great Vibes', cursive;
-font-size:2.4rem;
-color:#F3EDE2;
-}
-
-/* HAMBURGER */
-
-.hamburger{
-position:absolute;
-left:20px;
-cursor:pointer;
-width:30px;
-height:22px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.hamburger div{
-height:3px;
-background:#F3EDE2;
-}
-
-/* MENU */
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
-display:none;
-}
-
-.side-panel{
-position:fixed;
-top:0;
-left:-270px;
-width:270px;
-height:100%;
-background:#F8F3EA;
-padding:120px 30px;
-transition:0.4s;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.side-panel a{
-text-decoration:none;
-color:#6F4E37;
-font-family:'Nunito', sans-serif;
-font-size:1.3rem;
-margin-bottom:20px;
-}
-
-.socials a{
-font-size:22px;
-color:#6F4E37;
-margin-right:15px;
-}
-
-/* ABOUT */
-
-.about{
-padding-top:180px;
+nav{
+background:#222;
+padding:10px;
 text-align:center;
 }
 
-.about img{
-width:210px;
-height:210px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #6F4E37;
-}
-
-.about p{
-max-width:650px;
-margin:30px auto;
-font-size:1.2rem;
-line-height:1.8;
-}
-
-.cta-button{
-padding:14px 30px;
-background:#6F4E37;
+nav a{
 color:white;
-border-radius:30px;
-cursor:pointer;
-display:inline-block;
-margin-top:20px;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
 }
 
-/* LISTA MARZEŃ */
-
-.list{
-display:none;
-padding-top:150px;
-max-width:900px;
-margin:auto;
-padding:20px;
+section{
+padding:40px;
 }
 
-.progress{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:25px;
-text-align:center;
-font-family:'Nunito';
+h2{
+border-bottom:2px solid #444;
+padding-bottom:10px;
 }
 
 .dream{
-background:white;
+background:#1c1c1c;
 padding:20px;
+margin:20px 0;
 border-radius:10px;
-margin-bottom:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-}
-
-.status{
-font-size:0.9rem;
-margin-top:5px;
-color:#666;
-}
-
-.gallery{
-display:flex;
-gap:10px;
-margin-top:12px;
-flex-wrap:wrap;
 }
 
 .gallery img{
-width:110px;
+width:120px;
+margin:5px;
 border-radius:6px;
-cursor:pointer;
 }
 
-.add-photo{
+input,button{
 margin-top:10px;
-font-size:0.9rem;
+padding:6px;
+border-radius:6px;
+border:none;
+}
+
+button{
+background:#e63946;
+color:white;
 cursor:pointer;
-color:#6F4E37;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-display:none;
-align-items:center;
-justify-content:center;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-}
-
-/* QUOTES */
-
-.quotes{
-display:none;
-padding-top:150px;
-max-width:800px;
-margin:auto;
-padding:20px;
 }
 
 .quote{
-background:white;
-padding:15px 20px;
-margin-bottom:15px;
-border-left:4px solid #6F4E37;
-border-radius:6px;
-font-style:italic;
-white-space:pre-line;
+font-size:20px;
+line-height:1.6;
+margin-bottom:40px;
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
-<div class="hamburger" id="hamburger">
-<div></div>
-<div></div>
-<div></div>
-</div>
-<h1>Lista, która się wydarzy</h1>
+Moja strona marzeń
 </header>
 
-<div class="overlay" id="overlay"></div>
+<nav>
+<a href="#cytaty">Cytaty</a>
+<a href="#marzenia">Lista marzeń</a>
+<a href="https://www.instagram.com/" target="_blank">Instagram</a>
+</nav>
 
-<div class="side-panel" id="panel">
+<section id="cytaty">
 
-<div>
-<a href="#about">O mnie</a>
-<a href="#dreamList">Lista marzeń</a>
-<a href="#quotes">Cytaty</a>
-</div>
-
-<div class="socials">
-<a href="https://www.instagram.com/_szymonn.p/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://twitter.com/" target="_blank"><i class="fab fa-x-twitter"></i></a>
-</div>
-
-</div>
-
-<section class="about" id="about">
-
-<img src="IMG_8660.jpeg">
-
-<p>
-To jest miejsce, w którym zapisuję rzeczy, które się wydarzą.
-Nie marzenia. Plany.
-</p>
-
-<div class="cta-button" id="goToDreams">Moja lista marzeń</div>
-
-</section>
-
-<section class="list" id="dreamList">
-
-<div class="progress">
-Postęp realizacji marzeń: <span id="progress"></span>
-</div>
-
-<!-- MARZENIA -->
-
-<div class="dream"><h3>Awansować na stopień aspiranta i zaliczyć szkołę aspirantów PSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Być świadkiem na ślubie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Dotknąć lwa na żywo</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Kupić i odebrać swoje nowe auto z salonu</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Kupić jedną uncję złota</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Kupić mieszkanie pod wynajem</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Kupić mieszkanie lub dom za granicą</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Kupić swoją własną broń</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się drukować na drukarce 3D</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się grać na gitarze</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się grać na pianinie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się jeździć na snowboardzie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się płynnie mówić po angielsku</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Nauczyć się płynnie mówić po hiszpańsku</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Oddać krew potrzebującym</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Odwiedzić Dubaj</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Odwiedzić Safari w Afryce</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Poprowadzić wóz strażacki do akcji</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Przebiec maraton</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Skoczyć ze spadochronem</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Uratować komuś życie</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Zbudować swój własny dom</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Zdać maturę</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Zostać strażakiem OSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-<div class="dream"><h3>Zostać strażakiem PSP</h3><div class="status"></div><div class="gallery"></div><div class="add-photo">Dodaj zdjęcie</div></div>
-
-</section>
-
-<section class="quotes" id="quotes">
+<h2>Cytaty</h2>
 
 <div class="quote">
-„Nie ma skrótów do miejsca do którego warto dojść” ~ M.P
-</div>
 
-<div class="quote">
-„Panowie świętują tylko to, o co naprawdę musieli walczyć. Urodziny do tego nie należą” ~ A.T
-</div>
+„Jeżeli naprawdę czegoś pragniesz — znajdziesz sposób.  
+Jeżeli nie — znajdziesz wymówkę.
 
-<div class="quote">
-„Punkt widzenia zależy od punktu siedzenia”
-</div>
+Nie chodzi o to, żeby być lepszym od innych.  
+Chodzi o to, żeby być lepszym niż wczoraj.
 
-<div class="quote">
-„Sukces to przechodzenie od porażki do porażki bez utraty entuzjazmu” ~ W.C
-</div>
+Marzenia nie działają, dopóki Ty nie zaczniesz działać.  
+Droga może być długa, trudna i pełna przeszkód.
 
-<div class="quote">
-„… nie nie, marzenia się nie spełniają. Marzenia się spełnia” ~ N.S
-</div>
+Ale każdy krok przybliża Cię do celu.
 
-<div class="quote">
-Wyobraź sobie że leżysz na łożu śmierci...
+Nie zawsze będzie łatwo.  
+Nie zawsze będzie wygodnie.  
+Czasem będzie bolało.
 
-Wtedy otwierają się drzwi.
+Ale właśnie wtedy powstaje charakter.
 
-Wchodzą twoje niezrealizowane marzenia.
+Bo największą satysfakcję daje osiągnięcie czegoś,  
+co kiedyś wydawało się niemożliwe.”
 
-„Byłem twoją odwagą.”
-
-„Byłem życiem które mogłeś prowadzić.”
-
-„Byłem dumą twojej rodziny.”
-
-I wtedy rozumiesz, że to ty sam jesteś swoim największym sędzią.
-
-Czy naprawdę chcesz, by ten moment kiedyś stał się twoją rzeczywistością?
-
-Jeśli nie — wstań i działaj.
 </div>
 
 </section>
 
-<div class="lightbox" id="lightbox">
-<img id="lightboxImg">
-</div>
+<section id="marzenia">
+
+<h2>Lista marzeń</h2>
+
+<div id="dreamList"></div>
+
+</section>
 
 <script>
 
-const hamburger=document.getElementById("hamburger");
-const panel=document.getElementById("panel");
-const overlay=document.getElementById("overlay");
+let dreams = [
 
-const about=document.querySelector(".about");
-const list=document.querySelector(".list");
-const quotes=document.querySelector(".quotes");
+"Awansować na stopień aspiranta, i zaliczenie szkoły aspirantów PSP",
+"Być świadkiem na ślubie",
+"Dotknąć lwa na żywo",
+"Kupić i odebrać swoje nowe auto z salonu",
+"Kupić jedną uncje złota",
+"Kupić mieszkanie pod wynajem",
+"Kupić mieszkanie/dom za granicą",
+"Kupić swoją własną broń",
+"Nauczyć się drukować na drukarce 3D",
+"Nauczyć się grać na gitarze",
+"Nauczyć się grać na pianinie",
+"Nauczyć się jeździć na snowboardzie (i się nie zabić przy tym)",
+"Nauczyć się płynnie mówić po angielsku",
+"Nauczyć się płynnie mówić po hiszpańsku",
+"Nawiązać zagraniczną znajomość",
+"Obejrzeć zachód słońca na dachu wieżowca",
+"Oddać krew potrzebującym",
+"Odwiedzić Dubaj",
+"Odwiedzić kasyno na żywo",
+"Odwiedzić Los Angeles",
+"Odwiedzić Nowy York",
+"Odwiedzić oldtrafford",
+"Odwiedzić Safari w Afryce",
+"Odwiedzić serialową remizę 51 z serialu Chicago Fire w Chicago",
+"Polecieć do Hiszpanii",
+"Polecieć do USA",
+"Pomóc i odwiedzić dzieci z fundacji cancer fighters",
+"Pomóc komuś w kryzysie psychicznym",
+"Poprowadzić jacht",
+"Poprowadzić łódkę",
+"Poprowadzić wóz strażacki do akcji",
+"Pojechać na wakacje z bratem",
+"Przeczytać całą książkę",
+"Przebiec cały beep test do straży pożarnej (12-6)",
+"Przebiec maraton",
+"Przelecieć sie helikopterem",
+"Przeżyć imprezę na jachcie",
+"Przeżyć noc pod namiotem nad wodą",
+"Przeżyć noc w lesie pod namiotem",
+"Przejechać się Ferrari",
+"Przejechać się Lamborghini",
+"Przejechać się Porshe",
+"Przejechać się Rolls Roysem",
+"Przejechać się każdą generacją dream cara (BMW M3)",
+"Przyczynić się do sprowadzenia fabrycznie nowego samochodu do OSP",
+"Przywitać nowy rok na Giewoncie",
+"Sprowadzić auto z USA",
+"Skoczyć ze spadochronem",
+"Uratować komuś życie",
+"Wybaczyć każdemu, kto mnie zawiódł",
+"Zapalić cygaro",
+"Zagrać z synem w piłkę nożną",
+"Zainwestować i zarobić na giełdzie",
+"Zbudować swój własny dom",
+"Zdać maturę",
+"Zjeść spaghetti bolognese we Włoszech",
+"Zobaczyć Islandię na żywo",
+"Zobaczyć mecz ligi mistrzów na żywo",
+"Zobaczyć mecz Realu Madryt na żywo",
+"Zobaczyć miasteczko świętego Mikołaja w Laponii",
+"Zobaczyć w Turcji startujące balony oświcie (love valley)",
+"Zobaczyć zachód słońca na plaży",
+"Zdobyć Gerlach",
+"Zdobyć Rysy",
+"Złowić rybę na łódce",
+"Zostać strażakiem OSP",
+"Zostać strażakiem PSP",
+"Zrobić kurs KPP",
+"Zrobić military push up challenge na raz",
+"Zrobić patent sternika motorowodnego",
+"Zrobić pozwolenie na broń",
+"Zrobić prawo jazdy kategorii A",
+"Zrobić prawo jazdy kategorii B",
+"Zrobić prawo jazdy kategorii C",
+"Zrobić prawo jazdy kategorii C+E",
+"Zrobić trening sztuk walki",
+"Zrobić wkładkę na prowadzenie pojazdów uprzywilejowanych",
+"Zrobić sobie chociaż jeden tatuaż",
+"Zrobić samemu, własnoręcznie swoją własną stronę internetową"
 
-function show(section){
-about.style.display="none";
-list.style.display="none";
-quotes.style.display="none";
-section.style.display="block";
+]
+
+dreams.sort()
+
+let container = document.getElementById("dreamList")
+
+dreams.forEach(d => {
+
+let div = document.createElement("div")
+div.className="dream"
+
+div.innerHTML = `
+
+<h3>${d}</h3>
+
+Status: <input type="text" placeholder="">
+
+<br>
+
+Data realizacji: <input type="date">
+
+<div class="gallery"></div>
+
+<input type="file" accept="image/*">
+
+<button onclick="addPhoto(this)">Dodaj zdjęcie</button>
+
+`
+
+container.appendChild(div)
+
+})
+
+function addPhoto(btn){
+
+let box = btn.parentElement
+let input = box.querySelector("input[type=file]")
+let gallery = box.querySelector(".gallery")
+
+if(input.files.length>0){
+
+let img = document.createElement("img")
+img.src = URL.createObjectURL(input.files[0])
+gallery.appendChild(img)
+
 }
 
-hamburger.onclick=()=>{panel.style.left="0";overlay.style.display="block";}
-overlay.onclick=()=>{panel.style.left="-270px";overlay.style.display="none";}
-
-document.querySelectorAll(".side-panel a").forEach(link=>{
-link.onclick=(e)=>{
-e.preventDefault();
-let target=link.getAttribute("href");
-if(target=="#about")show(about);
-if(target=="#dreamList")show(list);
-if(target=="#quotes")show(quotes);
-panel.style.left="-270px";
-overlay.style.display="none";
 }
-});
-
-document.getElementById("goToDreams").onclick=()=>show(list);
-
-/* PROGRESS */
-
-const dreams=document.querySelectorAll(".dream");
-const completed=document.querySelectorAll(".dream.completed");
-let percent=Math.round((completed.length/dreams.length)*100);
-document.getElementById("progress").innerText=percent+"%";
-
-/* LIGHTBOX */
-
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightboxImg");
-
-document.querySelectorAll(".gallery img").forEach(img=>{
-img.onclick=()=>{
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
-}
-});
-
-lightbox.onclick=()=>{lightbox.style.display="none";}
 
 </script>
 
