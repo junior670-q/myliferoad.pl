@@ -251,7 +251,6 @@ white-space:pre-line;
 <a href="#about">O mnie</a>
 <a href="#dreamList">Lista marzeń</a>
 <a href="#quotes">Cytaty</a>
-<a href="#counter">Licznik</a>
 </div>
 
 <div class="socials">
@@ -359,15 +358,7 @@ Data realizacji: —<br><br>
 
 Status: niezrealizowane<br>
 Data realizacji: —<br><br>
-    
-</div>
 
-<div class="dream">
-<b> Zobaczyć miasteczko świętego Mikołaja w Laponii </b><br><br>
-    
-Status: niezrealizowane<br>
-Data realizacji: -<br><br>
-    
 </div>
 
 <div class="dream">
@@ -491,14 +482,6 @@ Data realizacji: —<br><br>
 </div>
 
 <div class="dream">
-<b>Zobaczyć Islandie na żywo</b><br><br>
-    
-Status: niezrealizowane<br>
-Data realizacji: -<br><br>
-    
-</div>
-
-<div class="dream">
 <b>Zostać strażakiem OSP</b><br><br>
 
 Status: niezrealizowane<br>
@@ -604,41 +587,6 @@ Bo każdy kolejny dzień odkładania czegoś „na potem” przybliża cię do t
 
 </section>
 
-<section class="counter" id="counter">
-
-<div style="margin-bottom:50px; text-align:center; max-width:750px; margin-left:auto; margin-right:auto;">
-
-<p style="font-size:1.15rem; line-height:1.9; color:#4A3426;">
-
-Ta zakładka to mój licznik wyjazdów i interwencji.
-
-Chcę zapisywać tutaj akcje, przy których byłem.
-Te zwykłe… ale też te najbardziej pojebane, które zostają w głowie na długo.
-
-To trochę pamiętnik z tej roboty.
-
-</p>
-
-<h2 style="text-align:center; font-size:60px; margin:40px 0;">
-300
-</h2>
-
-</div>
-
-<div style="background:#FFFFFF; padding:20px; border-radius:10px; margin-bottom:20px;">
-
-<br><br>
-
-</div>
-
-<div id="incidentList"></div>
-
-<div class="dream">
-<p><b> test</b></p>
-</div>
-
-</section>
-
 <script>
 
 const hamburger = document.getElementById("hamburger");
@@ -648,7 +596,6 @@ const overlay = document.getElementById("overlay");
 const aboutSection = document.querySelector(".about");
 const listSection = document.querySelector(".list");
 const quotesSection = document.querySelector(".quotes");
-const counterSection = document.getElementById("counter");
 
 const goToDreams = document.getElementById("goToDreams");
 
@@ -687,7 +634,6 @@ const target = link.getAttribute("href");
 if(target === "#about") showSection(aboutSection);
 if(target === "#dreamList") showSection(listSection);
 if(target === "#quotes") showSection(quotesSection);
-if(target === "#counter") showSection(counterSection);
 
 panel.style.left="-270px";
 overlay.style.display="none";
