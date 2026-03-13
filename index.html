@@ -648,6 +648,7 @@ const overlay = document.getElementById("overlay");
 const aboutSection = document.querySelector(".about");
 const listSection = document.querySelector(".list");
 const quotesSection = document.querySelector(".quotes");
+const counterSection = document.getElementById("counter");
 
 const goToDreams = document.getElementById("goToDreams");
 
@@ -686,6 +687,7 @@ const target = link.getAttribute("href");
 if(target === "#about") showSection(aboutSection);
 if(target === "#dreamList") showSection(listSection);
 if(target === "#quotes") showSection(quotesSection);
+if(target === "#counter") showSection(counterSection);
 
 panel.style.left="-270px";
 overlay.style.display="none";
