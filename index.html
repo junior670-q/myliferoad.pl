@@ -876,6 +876,44 @@ showSection(listSection);
 
 });
 
+document.querySelectorAll(".photo-gallery").forEach(gallery=>{
+  const slider = gallery.querySelector(".photo-slider");
+  const images = slider.querySelectorAll("img");
+  const left = gallery.querySelector(".gallery-left");
+  const right = gallery.querySelector(".gallery-right");
+  const dotsContainer = gallery.querySelector(".gallery-dots");
+  let index = 0;
+
+  images.forEach((img,i)=>{
+    const dot=document.createElement("span");
+    if(i===0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots=dotsContainer.querySelectorAll("span");
+
+  function updateGallery(){
+    slider.scrollTo({
+      left:slider.clientWidth*index,
+      behavior:"smooth"
+    });
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  left.addEventListener("click",()=>{
+    index--;
+    if(index<0) index=0;
+    updateGallery();
+  });
+
+  right.addEventListener("click",()=>{
+    index++;
+    if(index>=images.length) index=images.length-1;
+    updateGallery();
+  });
+});
+
 </script>
 
 </body>
