@@ -205,6 +205,72 @@ box-shadow:0 5px 15px rgba(0,0,0,0.08);
 font-size:1.1rem;
 }
 
+/* ===== GALERIA ZDJĘĆ ===== */
+.photo-gallery{
+  position:relative;
+  margin-top:15px;
+}
+
+.photo-slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  gap:10px;
+}
+
+.photo-slider::-webkit-scrollbar{
+  display:none;
+}
+
+.photo-slider img{
+  width:100%;
+  flex-shrink:0;
+  border-radius:10px;
+  scroll-snap-align:center;
+}
+
+.gallery-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);
+  color:white;
+  border:none;
+  font-size:22px;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.gallery-left{
+  left:5px;
+}
+
+.gallery-right{
+  right:5px;
+}
+
+.gallery-dots{
+  display:flex;
+  justify-content:center;
+  margin-top:8px;
+  gap:6px;
+}
+
+.gallery-dots span{
+  width:8px;
+  height:8px;
+  background:#ccc;
+  border-radius:50%;
+  display:block;
+}
+
+.gallery-dots span.active{
+  background:#6F4E37;
+}
+
 /* ===== QUOTES ===== */
 
 section.quotes{
