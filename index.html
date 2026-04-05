@@ -231,6 +231,7 @@ font-size:1.1rem;
   flex-shrink:0;
   border-radius:10px;
   scroll-snap-align:center;
+  cursor:pointer;
 }
 
 .gallery-btn{
@@ -294,6 +295,7 @@ border-radius:6px;
 font-style:italic;
 white-space:pre-line;
 }
+
 
 </style>
 </head>
@@ -945,7 +947,7 @@ document.querySelectorAll(".photo-gallery").forEach(gallery=>{
 
   function updateGallery(){
     slider.scrollTo({
-      left:slider.clientWidth*index,
+      left:images[index].offsetLeft,
       behavior:"smooth"
     });
     dots.forEach(d=>d.classList.remove("active"));
