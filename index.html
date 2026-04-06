@@ -332,15 +332,6 @@ z-index:2000;
 cursor:zoom-out;
 }
 
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
-
-.lightbox.active{
-display:flex;
-}
 
 </style>
 </head>
@@ -1016,7 +1007,8 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
 document.querySelectorAll(".photo-slider img").forEach(img=>{
-  img.addEventListener("click",()=>{
+  img.addEventListener("click",(e)=>{
+    e.stopPropagation();
     lightbox.classList.add("active");
     lightboxImg.src = img.src;
   });
